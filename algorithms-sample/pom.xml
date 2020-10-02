@@ -10,12 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>data-structures-sample</artifactId>
+    <artifactId>algorithms-sample</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>me.jkong</groupId>
-            <artifactId>common-sample</artifactId>
-        </dependency>
-    </dependencies>
+
 </project>

@@ -11,9 +11,21 @@
 
     <modules>
         <module>data-structures-sample</module>
+        <module>algorithms-sample</module>
+        <module>common-sample</module>
     </modules>
 
-    <dependencies>
+    <properties>
+        <project.version>1.0.0</project.version>
+    </properties>
 
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>me.jkong</groupId>
+                <artifactId>common-sample</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
