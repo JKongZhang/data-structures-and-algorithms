@@ -17,6 +17,7 @@
 
     <properties>
         <project.version>1.0.0</project.version>
+        <junit-jupiter.version>5.6.2</junit-jupiter.version>
     </properties>
 
     <dependencyManagement>
@@ -25,6 +26,11 @@
                 <groupId>me.jkong</groupId>
                 <artifactId>common-sample</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit-jupiter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
