@@ -3,7 +3,7 @@ package me.jkong.common.utils;
 /**
  * 方法执行时间统计
  *
- * @author JKong
+ * @author Laba Zhang
  */
 public class TimeUtils {
     /**

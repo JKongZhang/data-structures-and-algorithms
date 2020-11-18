@@ -1,4 +1,4 @@
-package me.jkong.ds._2_array;
+package me.jkong.ds.list;
 
 
 import org.junit.jupiter.api.Assertions;
@@ -18,7 +18,7 @@ class ArrayListTest {
     
     @BeforeEach
     void setUp() {
-        list = new ArrayList<>();
+        list = new ArrayList<Integer>();
         list.add(1);
         list.add(2);
         list.add(3);

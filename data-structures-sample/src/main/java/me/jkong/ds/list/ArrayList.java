@@ -1,18 +1,11 @@
-package me.jkong.ds._2_array;
+package me.jkong.ds.list;
 
 /**
  * 基于数组实现动态数组
  *
- * @author JKong
- * @version v0.0.1
- * @date 2020/10/3 10:08.
+ * @author Laba Zhang
  */
-public class ArrayList<E> {
-    
-    /**
-     * 元素的数量
-     */
-    private int size;
+public class ArrayList<E> extends AbstractList<E> {
     
     /**
      * 所有的元素
@@ -20,7 +13,6 @@ public class ArrayList<E> {
     private E[] elements;
     
     private static final int DEFAULT_CAPACITY = 16;
-    private static final int ELEMENT_NOT_FOUND = -1;
     
     public ArrayList(int capaticy) {
         capaticy = Math.max(capaticy, DEFAULT_CAPACITY);
@@ -34,6 +26,7 @@ public class ArrayList<E> {
     /**
      * 清除所有元素
      */
+    @Override
     public void clear() {
         for (int i = 0; i < size; i++) {
             elements[i] = null;
@@ -42,48 +35,12 @@ public class ArrayList<E> {
     }
     
     /**
-     * 元素的数量
-     *
-     * @return size
-     */
-    public int size() {
-        return size;
-    }
-    
-    /**
-     * 是否为空
-     *
-     * @return true: ArrayList is empty
-     */
-    public boolean isEmpty() {
-        return size == 0;
-    }
-    
-    /**
-     * 是否包含某个元素
-     *
-     * @param element 待验证元素
-     * @return true: ArrayList contains this element
-     */
-    public boolean contains(E element) {
-        return indexOf(element) != ELEMENT_NOT_FOUND;
-    }
-    
-    /**
-     * 添加元素到尾部
-     *
-     * @param element 待插入元素
-     */
-    public void add(E element) {
-        add(size, element);
-    }
-    
-    /**
      * 在index位置插入一个元素
      *
      * @param index   下标
      * @param element 待插入的元素
      */
+    @Override
     public void add(int index, E element) {
         rangeCheckForAdd(index);
         
@@ -102,6 +59,7 @@ public class ArrayList<E> {
      * @param index 返回指定下标的数据
      * @return element value
      */
+    @Override
     public E get(int index) {
         rangeCheck(index);
         return elements[index];
@@ -114,6 +72,7 @@ public class ArrayList<E> {
      * @param element 待更新的元素
      * @return 原来的元素ֵ
      */
+    @Override
     public E set(int index, E element) {
         rangeCheck(index);
         
@@ -129,6 +88,7 @@ public class ArrayList<E> {
      * @param index 下标
      * @return 被移除的数据
      */
+    @Override
     public E remove(int index) {
         rangeCheck(index);
         E old = elements[index];
@@ -154,6 +114,7 @@ public class ArrayList<E> {
      * @param element 待查验的元素
      * @return 元素所在的第一个下标
      */
+    @Override
     public int indexOf(E element) {
         // 因为elements中可能存在null值，因此需要对null值做特殊处理
         if (element == null) {
@@ -211,17 +172,5 @@ public class ArrayList<E> {
             newElements[i] = elements[i];
         }
         elements = newElements;
-    }
-    
-    private void rangeCheckForAdd(int index) {
-        if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("Index:" + index + ", Size:" + size);
-        }
-    }
-    
-    private void rangeCheck(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Index:" + index + ", Size:" + size);
-        }
     }
 }

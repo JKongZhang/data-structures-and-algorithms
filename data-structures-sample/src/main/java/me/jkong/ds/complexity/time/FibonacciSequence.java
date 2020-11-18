@@ -1,4 +1,4 @@
-package me.jkong.ds._1_complexity.time;
+package me.jkong.ds.complexity.time;
 
 import me.jkong.common.utils.TimeUtils;
 
@@ -8,9 +8,7 @@ import me.jkong.common.utils.TimeUtils;
  * 的是这样一个数列：0、1、1、2、3、5、8、13、21、34、……
  * 在数学上，斐波那契数列以如下被以递推的方法定义：F(0)=0，F(1)=1，F(2)=1, F(n)=F(n - 1)+F(n - 2)（n ≥ 3，n ∈ N*）
  *
- * @author JKong
- * @version v0.0.1
- * @date 2020/10/2 09:43.
+ * @author Laba Zhang
  */
 public class FibonacciSequence {
     
