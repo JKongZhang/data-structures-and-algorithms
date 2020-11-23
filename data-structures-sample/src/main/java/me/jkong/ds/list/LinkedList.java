@@ -8,7 +8,7 @@ package me.jkong.ds.list;
 public class LinkedList<E> extends AbstractList<E> {
     private Node<E> first;
     private Node<E> last;
-    
+
     /**
      * 添加元素时需要注意4种情况：
      * 1. 在两节点之间添加元素
@@ -22,7 +22,7 @@ public class LinkedList<E> extends AbstractList<E> {
     @Override
     public void add(int index, E element) {
         rangeCheckForAdd(index);
-        
+
         // solve index == size
         if (index == size) {
             Node<E> oldLast = this.last;
@@ -45,11 +45,9 @@ public class LinkedList<E> extends AbstractList<E> {
                 prev.next = newNode;
             }
         }
-        
-        
         size++;
     }
-    
+
     @Override
     public E set(int index, E element) {
         Node<E> node = node(index);
@@ -57,12 +55,12 @@ public class LinkedList<E> extends AbstractList<E> {
         node.element = element;
         return old;
     }
-    
+
     @Override
     public E get(int index) {
         return node(index).element;
     }
-    
+
     @Override
     public int indexOf(E element) {
         // 因为elements中可能存在null值，因此需要对null值做特殊处理
@@ -84,30 +82,37 @@ public class LinkedList<E> extends AbstractList<E> {
         }
         return ELEMENT_NOT_FOUND;
     }
-    
+
     @Override
     public E remove(int index) {
         rangeCheck(index);
-        
-        Node<E> node = first;
-        if (index == 0) {
-            first = first.next;
+
+        Node<E> node = node(index);
+        Node<E> next = node.next;
+        Node<E> prev = node.prev;
+        // index == 0
+        if (prev == null) {
+            first = next;
         } else {
-            Node<E> prev = node(index - 1);
-            node = prev.next;
-            prev.next = node.next;
+            prev.next = next;
+        }
+        // index == size - 1
+        if (next == null) {
+            last = prev;
+        } else {
+            next.prev = prev;
         }
         size--;
         return node.element;
     }
-    
+
     @Override
     public void clear() {
         first = null;
         last = null;
         size = 0;
     }
-    
+
     private Node<E> node(int index) {
         rangeCheck(index);
         if (index < (size >> 1)) {
@@ -123,9 +128,9 @@ public class LinkedList<E> extends AbstractList<E> {
             }
             return node;
         }
-        
+
     }
-    
+
     @Override
     public String toString() {
         StringBuilder string = new StringBuilder();
@@ -141,12 +146,12 @@ public class LinkedList<E> extends AbstractList<E> {
         string.append("]");
         return string.toString();
     }
-    
+
     private static class Node<E> {
         E element;
         Node<E> next;
         Node<E> prev;
-        
+
         public Node(Node<E> prev, E element, Node<E> next) {
             this.prev = prev;
             this.element = element;

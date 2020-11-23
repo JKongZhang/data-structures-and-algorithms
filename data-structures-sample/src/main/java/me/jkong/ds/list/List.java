@@ -1,4 +1,4 @@
-package me.jkong.ds;
+package me.jkong.ds.list;
 
 /**
  * list 接口

@@ -1,7 +1,5 @@
 package me.jkong.ds.list;
 
-import me.jkong.ds.List;
-
 /**
  * List 抽象类
  *
@@ -18,6 +16,7 @@ public abstract class AbstractList<E> implements List<E> {
      *
      * @return size
      */
+    @Override
     public int size() {
         return size;
     }
@@ -27,6 +26,7 @@ public abstract class AbstractList<E> implements List<E> {
      *
      * @return true: ArrayList is empty
      */
+    @Override
     public boolean isEmpty() {
         return size == 0;
     }
@@ -37,6 +37,7 @@ public abstract class AbstractList<E> implements List<E> {
      * @param element 待验证元素
      * @return true: ArrayList contains this element
      */
+    @Override
     public boolean contains(E element) {
         return indexOf(element) != ELEMENT_NOT_FOUND;
     }
@@ -46,6 +47,7 @@ public abstract class AbstractList<E> implements List<E> {
      *
      * @param element 待插入元素
      */
+    @Override
     public void add(E element) {
         add(size, element);
     }

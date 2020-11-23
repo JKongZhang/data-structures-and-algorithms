@@ -1,6 +1,5 @@
 package me.jkong.ds.list;
 
-import me.jkong.ds.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
