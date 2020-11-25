@@ -3,14 +3,32 @@ package me.jkong.ds.list;
 import me.jkong.common.utils.Asserts;
 
 /**
- * single cycle linked list
+ * circle linked list test
  *
  * @author Laba Zhang
  */
-class SingleCycleLinkedListTest {
+class CircleLinkedListTest {
     public static void main(String[] args) {
-        testList(new SingleCircleLinkedList<>());
+//        testList(new CircleLinkedList<>());
+        josephusProblem();
     }
+
+    private static void josephusProblem() {
+        CircleLinkedList<Integer> circleLinkedList = new CircleLinkedList<>();
+        for (int i = 1 ; i<= 8; i++) {
+            circleLinkedList.add(i);
+        }
+
+        circleLinkedList.reset();
+
+        while (!circleLinkedList.isEmpty()) {
+            // 每三个删除一个
+            circleLinkedList.next();
+            circleLinkedList.next();
+            System.out.println(circleLinkedList.remove());
+        }
+    }
+
     static void testList(List<Integer> list) {
         list.add(11);
         list.add(22);

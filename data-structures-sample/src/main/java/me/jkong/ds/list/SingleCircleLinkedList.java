@@ -5,7 +5,7 @@ package me.jkong.ds.list;
  *
  * @author Laba Zhang
  */
-public class SingleCycleLinkedList<E> extends AbstractList<E> {
+public class SingleCircleLinkedList<E> extends AbstractList<E> {
     private Node<E> first;
 
     @Override
