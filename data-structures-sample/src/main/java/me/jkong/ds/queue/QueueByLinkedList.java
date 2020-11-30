@@ -7,30 +7,36 @@ import me.jkong.ds.list.LinkedList;
  *
  * @author Laba Zhang
  */
-public class QueueByLinkedList<E> {
-    private LinkedList<E> data = new LinkedList<>();
+public class QueueByLinkedList<E> implements Queue<E>{
+    protected LinkedList<E> data = new LinkedList<>();
 
+    @Override
     public void enQueue(E e) {
         data.add(e);
     }
 
+    @Override
     public E deQueue() {
         return data.remove(0);
     }
 
+    @Override
     public E front() {
         return data.get(0);
     }
 
+    @Override
     public int size() {
         return data.size();
     }
 
+    @Override
     public boolean isEmpty() {
         return data.isEmpty();
     }
 
 
+    @Override
     public void clear() {
         data.clear();
     }
