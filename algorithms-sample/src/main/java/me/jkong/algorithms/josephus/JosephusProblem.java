@@ -1,4 +1,4 @@
-package me.jkong.algorithms;
+package me.jkong.algorithms.josephus;
 
 /**
  * 约瑟夫环问题
